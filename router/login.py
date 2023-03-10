@@ -60,4 +60,4 @@ def login(
 @router.get('/home')
 def home(current_user: user.User = Depends(oauth.get_current_user)):
     if current_user:
-        return response(message="You're at home", code=200, data={"current_user": current_user.username})
+        return response(message="You're at home", code=200, data={"current_user": current_user.username, "id": current_user.id})
